@@ -31,3 +31,11 @@ Add our web app to the network:
 ```
 docker run -p 5000:90 --rm --name web_app --network my_network iiva/asp-data-dev
 ```
+
+Using `docker-compose`:
+```
+docker-compose build
+docker-compose up
+```
+
+Go to [http://localhost:5000](http://localhost:5000)

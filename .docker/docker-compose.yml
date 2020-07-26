@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+
+    sqlserver:
+        container_name: sqlserver
+        image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+        ports:
+            - "1433:1433"
+        env_file: development.env
+        volumes:
+            - sqldata:/var/opt/mssql
+        networks:
+            - my-network
+
+    web_app:
+        container_name: web_app
+        build:
+            context: '../MyWebSite/'
+            #dockerfile: ../MyWebSite/Dockerfile
+        ports:
+            - "5000:90"
+        restart: on-failure
+        networks:
+            - my-network
+        depends_on:
+          - sqlserver
+
+volumes:
+    sqldata:
+
+networks:
+    my-network:

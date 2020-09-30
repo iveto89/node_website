@@ -6,7 +6,7 @@ To create a network:
 docker network create my_network
 ```
 
-Pull a SQL Server 2019 image:
+To Pull a SQL Server 2019 image:
 ```
 docker pull  mcr.microsoft.com/mssql/server:2017-latest-ubuntu
 ```

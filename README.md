@@ -1,4 +1,4 @@
-### Docker setup ###
+*** Docker setup ****
 
 To create a network:
 
